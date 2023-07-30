@@ -37,6 +37,41 @@ function renderTableData(y) {
 }
 
 // Find pet
+// function findPet() {
+//   const id = inputId.value.trim();
+//   const name = inputName.value.trim();
+//   const type = inputType.value;
+//   const breed = inputBreed.value;
+//   const vaccinated = inputVaccinated.checked;
+//   const dewormed = inputDewormed.checked;
+//   const sterilized = inputSterilized.checked;
+
+//   const filteredPets = petArr.filter((pet) => {
+//     const matchesId = !id || pet.id.toLowerCase().includes(id.toLowerCase());
+//     const matchesName =
+//       !name || pet.name.toLowerCase().includes(name.toLowerCase());
+//     const matchesType = !type || pet.type === type || type === "Select Type";
+//     const matchesBreed =
+//       !breed || pet.breed === breed || breed === "Select Breed";
+//     const matchesVaccinated = vaccinated ? pet.vaccinated === true : true;
+//     const matchesDewormed = dewormed ? pet.dewormed === true : true;
+//     const matchesSterilized = sterilized ? pet.sterilized === true : true;
+
+//     return (
+//       matchesId &&
+//       matchesName &&
+//       matchesType &&
+//       matchesBreed &&
+//       matchesVaccinated &&
+//       matchesDewormed &&
+//       matchesSterilized
+//     );
+//   });
+
+//   renderTableData(filteredPets);
+// }
+
+// finPet() rút gọn và dễ hiểu hơn
 function findPet() {
   const id = inputId.value.trim();
   const name = inputName.value.trim();
@@ -46,27 +81,16 @@ function findPet() {
   const dewormed = inputDewormed.checked;
   const sterilized = inputSterilized.checked;
 
-  const filteredPets = petArr.filter((pet) => {
-    const matchesId = !id || pet.id.toLowerCase().includes(id.toLowerCase());
-    const matchesName =
-      !name || pet.name.toLowerCase().includes(name.toLowerCase());
-    const matchesType = !type || pet.type === type || type === "Select Type";
-    const matchesBreed =
-      !breed || pet.breed === breed || breed === "Select Breed";
-    const matchesVaccinated = vaccinated ? pet.vaccinated === true : true;
-    const matchesDewormed = dewormed ? pet.dewormed === true : true;
-    const matchesSterilized = sterilized ? pet.sterilized === true : true;
-
-    return (
-      matchesId &&
-      matchesName &&
-      matchesType &&
-      matchesBreed &&
-      matchesVaccinated &&
-      matchesDewormed &&
-      matchesSterilized
-    );
-  });
+  const filteredPets = petArr.filter(
+    (pet) =>
+      (!id || pet.id.toLowerCase().includes(id.toLowerCase())) &&
+      (!name || pet.name.toLowerCase().includes(name.toLowerCase())) &&
+      (!type || pet.type === type || type === "Select Type") &&
+      (!breed || pet.breed === breed || breed === "Select Breed") &&
+      (!vaccinated || pet.vaccinated) &&
+      (!dewormed || pet.dewormed) &&
+      (!sterilized || pet.sterilized)
+  );
 
   renderTableData(filteredPets);
 }
