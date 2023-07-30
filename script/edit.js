@@ -3,7 +3,7 @@
     PROCESS FLOW
 ----------------------------------------------------- */
 // Render pet table
-let petArr = JSON.parse(getFromStorage("petArr") ?? "[]");
+// let petArr = JSON.parse(getFromStorage("petArr") ?? "[]");
 renderTableData(petArr);
 
 // Load breed list on change type

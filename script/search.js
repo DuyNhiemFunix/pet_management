@@ -3,8 +3,8 @@
     PROCESS FLOW
 ----------------------------------------------------- */
 // Load pet/breed data
-const petArr = JSON.parse(getFromStorage("petArr") ?? "[]");
-const breedArr = JSON.parse(getFromStorage("breedArr") ?? "[]");
+// const petArr = JSON.parse(getFromStorage("petArr") ?? "[]");
+// const breedArr = JSON.parse(getFromStorage("breedArr") ?? "[]");
 
 // Preload all breed list (user can search by breed )
 inputBreed.innerHTML = `<option>Select Breed</option>`;

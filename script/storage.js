@@ -31,6 +31,10 @@ const exportBtn = $("export-btn");
 /* ---------------------------------------------------
 PROCESS FLOW
 ----------------------------------------------------- */
+// Load pet/breed data
+let petArr = JSON.parse(getFromStorage("petArr") ?? "[]");
+let breedArr = JSON.parse(getFromStorage("breedArr") ?? "[]");
+
 // Sidebar: load status
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("sidebarState") === null) {

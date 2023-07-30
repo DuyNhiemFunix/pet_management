@@ -3,7 +3,7 @@
 PROCESS FLOW
 ----------------------------------------------------- */
 // Import pet data
-let petArr = JSON.parse(getFromStorage("petArr") ?? "[]");
+// let petArr = JSON.parse(getFromStorage("petArr") ?? "[]");
 renderTableData(petArr);
 let healthyPetArr = [];
 

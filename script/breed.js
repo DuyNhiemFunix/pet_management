@@ -2,7 +2,7 @@
 /* ---------------------------------------------------
     PROCESS FLOW
 ----------------------------------------------------- */
-let breedArr = JSON.parse(getFromStorage("breedArr") ?? "[]");
+// let breedArr = JSON.parse(getFromStorage("breedArr") ?? "[]");
 renderBreedData(breedArr);
 
 // 'Submit' button
